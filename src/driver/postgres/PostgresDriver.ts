@@ -598,10 +598,8 @@ export class PostgresDriver implements Driver {
                     object[unescapeString(key)] = nullValue ? null : unescapeString(stringValue);
                     return "";
                 });
-                return object;
+                value = object;
 
-            } else {
-                return value;
             }
 
         } else if (columnMetadata.type === "simple-array") {
